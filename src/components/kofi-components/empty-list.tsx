@@ -1,9 +1,7 @@
 "use client";
 import { AuthContext } from "@/context/auth/context";
-import { useDrawer } from "@/hook/use-drawer";
-import { ArchiveBoxXMarkIcon } from "@heroicons/react/20/solid";
 import { useRouter } from "next/navigation";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 export default function EmptyList({ reload }: { reload: () => void }) {
   let router = useRouter();

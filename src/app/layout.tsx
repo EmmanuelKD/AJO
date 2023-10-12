@@ -1,10 +1,9 @@
 // "use client"
 import { ContextProvider } from "@/context/ContextProvider";
-import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Head from "next/head";
-import { Component } from "react";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,13 +25,7 @@ export default function RootLayout({
       </Head>
 
       <ContextProvider>
-        <div className="flex flex-col h-screen">
-          {/* <Notifications /> */}
-          {/* <AppBar /> */}
-          {/* <ContentContainer> */}
-            {/* <Component {...pageProps} /> */}
-            {/* <Footer /> */}
-          {/* </ContentContainer> */}
+        <div className="flex flex-col h-screen"> 
           <body className={inter.className}>{children}</body> 
         </div>
       </ContextProvider>
