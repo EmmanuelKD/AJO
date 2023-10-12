@@ -35,7 +35,7 @@ type ColorType={name:string,hex:string}
 
 type ProductType = {
     id: string;
-    ownersId?: string;
+    brand: Brand;
     description?: string;
     imageSrc: string;
     colors?: ColorType[];
@@ -83,19 +83,25 @@ type ProductType = {
   type Post =entityType & {
       media: string[],
       caption: string,
-      userid: string,
+      userId: string,
   };
 
   type Brand =entityType & {
-      brandname: string, 
+      brandName: string, 
       description: string,
-      followercount: number,
-      followingcount: number,
+      followerCount: number,
+      followingCount: number,
       profile: string,
   };
 
   type brandowner  = {
     id: string,
     profile: string, 
-  }
+  };
+
+  type media =entityType & {
+    url: string,
+    thumbnail: string,
+
+  };
 
