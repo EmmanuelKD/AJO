@@ -1,9 +1,15 @@
 import React from "react";
+import Image from "next/image";
 
 const Logo = () => {
   return (
     <div>
-      <img src="../icons/Logo.png" alt="AJO Logo" />
+      <Image
+        src="/asset/img/logo.png"
+        alt="AJO Logo"
+        width={70}
+        height={70}
+      />
     </div>
   );
 };
