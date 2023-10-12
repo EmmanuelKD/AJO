@@ -14,8 +14,6 @@ const MenuSection_2 = () => {
         </div>
         <ActiveBrand />
         <InActiveBrand />
-        <InActiveBrand />
-        <InActiveBrand />
         <AddBrand />
       </div>
     </div>

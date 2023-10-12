@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation";
 
 export default function Header() {
   let router = useRouter();
-  const { isUserLoggedIn ,user} = useContext(AuthContext);
+  const { isUserLoggedIn, user } = useContext(AuthContext);
 
   const [isShowing, setIsShowing] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -182,7 +182,7 @@ export default function Header() {
                     </svg>
 
                     <span className="inline-flex items-center rounded-md bg-gray-400/10 px-2 py-1 text-xs font-medium text-green ring-1 ring-inset ring-gray-400/20">
-                     {user?.productInCart?.length??0}
+                      {user?.productInCart?.length ?? 0}
                     </span>
                   </button>
                 )}

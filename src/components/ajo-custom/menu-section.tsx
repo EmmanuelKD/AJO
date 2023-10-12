@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Menu } from "@headlessui/react";
-import Logo from "../logo";
+import Logo from "../kofi-components/logo";
 import InActiveCreate from "./in-active-create";
 import InActiveExplore from "./in-active-explore";
 import InActiveHelpSupport from "./in-active-help-support";
