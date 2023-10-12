@@ -1,5 +1,12 @@
-<script>
-    import Logo from "../icons/Logo.png";
-</script>
+import React from "react";
+import Logo from "../icons/Logo.png";
 
-<img src="{Logo}" alt="AJO Logo">
+const Logo = () => {
+  return (
+    <div>
+      <img src="{Logo}" alt="AJO Logo" />
+    </div>
+  );
+};
+
+export default Logo;

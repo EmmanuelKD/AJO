@@ -1,10 +1,9 @@
 import React from "react";
-// import Avater from "../icons/Avater.png"
-import AjoCoin from "./AjoCoin.svelte";
-import AllreadNotification from "./AllreadNotification.svelte";
-import HeaderAvater from "./HeaderAvater.svelte";
+import AllreadNotification from "./allread-notification";
+import HeaderAvater from "./header-avater";
+import LoginButton from "./login-button";
 
-const SearchBar = () => {
+const Varient_2 = () => {
   return (
     <div>
       <div className="w-full flex-col justify-start items-center inline-flex">
@@ -34,11 +33,9 @@ const SearchBar = () => {
             <div className="w-8 h-8 relative">
               <AllreadNotification />
             </div>
-            <div className="w-14 self-stretch justify-center items-center gap-1 flex">
-              <AjoCoin />
-            </div>
             <div className="pr-1.5 rounded-2xl justify-start items-center gap-1 flex">
               <HeaderAvater />
+              <LoginButton />
             </div>
           </div>
         </div>
@@ -47,4 +44,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default Varient_2;

@@ -1,16 +1,23 @@
-<script>
-	import Disconnect from "./Disconnect.svelte";
-	import HeaderAvater from "./HeaderAvater.svelte";
-	import LAvater from "./LAvater.svelte";
-import SAvater from "./SAvater.svelte";
-import XsAvater from "./XsAvater.svelte";
+import sisconnect from "./Disconnect.tsx";
+import headerAvater from "./HeaderAvater.tsx";
+import lAvater from "./LAvater.tsx";
+import savater from "./SAvater.tsx";
+import XsAvater from "./XsAvater.tsx";
 
-</script>
-<div class="w-44 px-3.5 py-4 rounded border border-purple-500 flex-col justify-start items-center gap-5 inline-flex">
-    <XsAvater/>
-<SAvater/>
-<HeaderAvater/>
-<Disconnect/>
-<LAvater/>
-  </div>
+import React from "react";
 
+const Avater = () => {
+  return (
+    <div>
+      <div className="w-44 px-3.5 py-4 rounded border border-purple-500 flex-col justify-start items-center gap-5 inline-flex">
+        <XsAvater />
+        <savater />
+        <header-avater />
+        <Disconnect />
+        <LAvater />
+      </div>
+    </div>
+  );
+};
+
+export default Avater;

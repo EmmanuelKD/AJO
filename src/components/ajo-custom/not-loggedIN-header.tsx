@@ -1,15 +1,14 @@
 import React from "react";
+import AllreadNotification from "./allread-notification";
+import HeaderAvater from "./header-avater";
 // import Avater from "../icons/Avater.png"
-import AjoCoin from "./AjoCoin.svelte";
-import AllreadNotification from "./AllreadNotification.svelte";
-import HeaderAvater from "./HeaderAvater.svelte";
 
-const SearchBar = () => {
+const notLoggedIn = () => {
   return (
     <div>
       <div className="w-full flex-col justify-start items-center inline-flex">
         <div className="self-stretch justify-end items-center gap-24 inline-flex">
-          <div className="grow shrink basis-0 h-10 justify-center items-center gap-4 flex">
+          <div className="grow shrink basis-0 h-10 justify-center items-center gap-4 flex ">
             <div className="relative w-4/5">
               <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg
@@ -34,9 +33,6 @@ const SearchBar = () => {
             <div className="w-8 h-8 relative">
               <AllreadNotification />
             </div>
-            <div className="w-14 self-stretch justify-center items-center gap-1 flex">
-              <AjoCoin />
-            </div>
             <div className="pr-1.5 rounded-2xl justify-start items-center gap-1 flex">
               <HeaderAvater />
             </div>
@@ -47,4 +43,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default notLoggedIn;
