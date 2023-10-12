@@ -1,15 +1,16 @@
+import { Menu } from "@headlessui/react";
 import React from "react";
 import SAvater from "./SAvater";
 
 const HeaderAvater = () => {
+  let isAuthorized=true;
+
   return (
     <div>
       <div className="w-32 h-10 pr-1.5 rounded-2xl justify-start items-center gap-1 inline-flex">
         <SAvater />
-        <div className="justify-center items-center gap-1 flex">
-          <div className="text-black text-base font-bold font-['League Spartan'] leading-tight">
-            ZΞNO.sol
-          </div>
+        <div className="justify-center items-center gap-1 flex ">
+          <MyDropdown />
           <div className="w-3 h-3 relative">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -43,3 +44,45 @@ const HeaderAvater = () => {
 };
 
 export default HeaderAvater;
+
+function MyDropdown() {
+  return (
+    <div className="relative">
+      <Menu>
+        <Menu.Button
+          className={
+            "text-black text-base font-bold font-['League Spartan'] leading-tight"
+          }
+        >
+          {" "}
+          ZΞNO.sol
+        </Menu.Button>
+        <Menu.Items>
+          <Menu.Item>
+            {({ active }) => (
+              <a
+                className={`${active && "bg-blue-500"}`}
+                href="/account-settings"
+              >
+                Account settings
+              </a>
+            )}
+          </Menu.Item>
+          <Menu.Item>
+            {({ active }) => (
+              <a
+                className={`${active && "bg-blue-500"}`}
+                href="/account-settings"
+              >
+                Documentation
+              </a>
+            )}
+          </Menu.Item>
+          <Menu.Item disabled>
+            <span className="opacity-75">Invite a friend (coming soon!)</span>
+          </Menu.Item>
+        </Menu.Items>
+      </Menu>
+    </div>
+  );
+}

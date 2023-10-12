@@ -1,9 +1,8 @@
-export default function SAvater() {
+
+export default function SAvater({src}:{src?:string}) {
   return (
-    <div>
-      <div>
-        <img className="w-10 h-10 rounded-full" src="" />
+       <div>
+        <img className="w-10 h-10 rounded-full bg-cover" src={src??"/asset/img/ajo-avater.png"} />
       </div>
-    </div>
-  );
+   );
 }

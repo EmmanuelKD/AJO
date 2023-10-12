@@ -11,6 +11,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Bars3Icon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
+import Varient_2 from "@/components/ajo-custom/Varient_2";
 
 const navigation = [
   { name: "Projects", href: "#", icon: FolderIcon, current: false },
@@ -30,10 +31,7 @@ export default function MainLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
-    <div
-      className="relative flex flex-row flex-nowrap  justify-evenly gap-[19px]   ml-[9px]
-    mr-[9px]"
-    >
+    <div className="relative flex flex-row flex-nowrap  justify-evenly gap-[19px]   ml-[9px]  mr-[9px]">
       <Drawer setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
       <ContentWrapper setSidebarOpen={setSidebarOpen}>
         <div></div>
@@ -141,8 +139,8 @@ function ContentWrapper({
 }) {
   // max-w-[928px]
   return (
-    <div className="w-full  bg-white rounded-sm ">
-      <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-6 border-b border-white/5 bg-gray-900 px-4 shadow-sm sm:px-6 lg:px-8">
+    <div className="w-full  bg-white rounded-sm p-[30px] pt-[12px] pb-[12px]">
+      {/* <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-6 border-b border-white/5 bg-gray-900 px-4 shadow-sm sm:px-6 lg:px-8">
         <button
           type="button"
           className="-m-2.5 p-2.5 text-white xl:hidden"
@@ -172,7 +170,8 @@ function ContentWrapper({
             </div>
           </form>
         </div>
-      </div>
+      </div> */}
+      <Varient_2 />
       <main>{children}</main>
     </div>
   );

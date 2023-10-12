@@ -4,6 +4,8 @@ import HeaderAvater from "./header-avater";
 import LoginButton from "./login-button";
 
 const Varient_2 = () => {
+  let isAuthorized = true;
+
   return (
     <div>
       <div className="w-full flex-col justify-start items-center inline-flex">
@@ -31,11 +33,10 @@ const Varient_2 = () => {
               />
             </div>
             <div className="w-8 h-8 relative">
-              <AllreadNotification />
+              {isAuthorized && <AllreadNotification />}
             </div>
             <div className="pr-1.5 rounded-2xl justify-start items-center gap-1 flex">
-              <HeaderAvater />
-              <LoginButton />
+              {isAuthorized ? <HeaderAvater /> : <LoginButton />}
             </div>
           </div>
         </div>
