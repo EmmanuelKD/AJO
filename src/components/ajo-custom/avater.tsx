@@ -1,14 +1,9 @@
-import Disconnect from "./Disconnect.tsx";
-import sisconnect from "./Disconnect.tsx";
-import headerAvater from "./HeaderAvater.tsx";
-import lAvater from "./LAvater.tsx";
-import SAvater from "./SAvater.tsx";
-import savater from "./SAvater.tsx";
-import XsAvater from "./XsAvater.tsx";
-
 import React from "react";
 import LAvater from "./l-avater.jsx";
 import HeaderAvater from "./header-avater.jsx";
+import SAvater from "./SAvater.jsx";
+import XsAvater from "./XsAvater.jsx";
+import Disconnect from "./disconnect.jsx";
 
 const Avater = () => {
   return (

@@ -1,5 +1,6 @@
 import React from "react";
 import AllreadNotification from "./allread-notification";
+import ActiveNotification from "./active-notification";
 
 const notification = () => {
   return (
@@ -9,7 +10,7 @@ const notification = () => {
           <AllreadNotification />
         </div>
         <div className="w-8 h-8 ">
-          <ActiveNotificatioin />
+          <ActiveNotification />
         </div>
         <div className="w-8 h-8 ">
           <AllreadNotification />

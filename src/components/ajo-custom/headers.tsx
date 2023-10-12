@@ -1,6 +1,6 @@
 import React from "react";
 import Varient_2 from "./Varient_2";
-import SearchBar from "./default";
+import SearchBar from "./SearchBar";
 
 const Headers = () => {
   return (
