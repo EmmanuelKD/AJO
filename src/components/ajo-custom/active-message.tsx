@@ -1,4 +1,4 @@
-export default function ActiveCreate() {
+export default function ActiveMessage() {
   return (
     <a href="">
       <div className="py-2.5 bg-pink-700 bg-opacity-10 rounded-lg justify-center items-center gap-2.5 inline-flex">

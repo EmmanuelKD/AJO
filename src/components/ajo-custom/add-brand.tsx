@@ -1,4 +1,4 @@
-export default function ActiveCreate() {
+export default function AddBrand() {
   return (
     <div className="w-full h-11 py-2.5 justify-start items-center gap-2.5 inline-flex">
       <div className="w-6 h-6 relative">
