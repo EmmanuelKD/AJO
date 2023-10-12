@@ -78,4 +78,24 @@ type ProductType = {
     productId:string;
     isReviewed:false;
     dialogCancleCount:number;
+  };
+
+  type Post =entityType & {
+      media: string[],
+      caption: string,
+      userid: string,
+  };
+
+  type Brand =entityType & {
+      brandname: string, 
+      description: string,
+      followercount: number,
+      followingcount: number,
+      profile: string,
+  };
+
+  type brandowner  = {
+    id: string,
+    profile: string, 
   }
+
