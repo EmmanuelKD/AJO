@@ -1,9 +1,23 @@
-// tailwind.config.js
-module.exports = {
+
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      fontFamily: {
+        sans: ["Roboto", "Arial", "sans"],
+      },
       colors: {
-        // Light Colors
         "primary-light": "#B21575",
         "on-primary-light": "#FFFFFF",
         "primary-container-light": "#FFD8E6",
@@ -61,10 +75,27 @@ module.exports = {
         "on-surface-variant-dark": "#504348",
         "outline-dark": "#827378",
       },
+
+      gradientColorStops: {
+        // primary: {
+        //   start: "#FF5733",
+        //   end: "#F39C12",
+        // },
+        // secondary: {
+        //   start: "#3498DB",
+        //   end: "#F39C12",
+        // },
+        // accent: {
+        //   start: "#F39C12",
+        //   end: "#FF5733",
+        // },
+      },
+      linearGradientColors: (theme: any) => theme("gradientColorStops"),
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require("@tailwindcss/aspect-ratio"),
-  ],
+  plugins: [require("@tailwindcss/forms"),
+  require('@tailwindcss/aspect-ratio'),
+],
 };
+export default config;
+ 
