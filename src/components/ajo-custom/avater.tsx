@@ -1,9 +1,9 @@
 import React from "react";
-import LAvater from "./l-avater.jsx";
-import HeaderAvater from "./header-avater.jsx";
-import SAvater from "./SAvater.jsx";
-import XsAvater from "./XsAvater.jsx";
-import Disconnect from "./disconnect.jsx";
+import LAvater from "./l-avater";
+import HeaderAvater from "./header-avater";
+import SAvater from "./SAvater";
+import XsAvater from "./XsAvater";
+import Disconnect from "./disconnect";
 
 const Avater = () => {
   return (
