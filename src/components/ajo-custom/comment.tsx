@@ -1,6 +1,6 @@
 import React from "react";
 
-const Comment = () => {
+const CommentLogo = () => {
   return (
     <div>
       <a href="">
@@ -28,4 +28,4 @@ const Comment = () => {
   );
 };
 
-export default Comment;
+export default CommentLogo;

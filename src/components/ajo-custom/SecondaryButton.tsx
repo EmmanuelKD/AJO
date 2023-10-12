@@ -2,6 +2,7 @@ import React from "react";
 import SB_M from "./SB_M";
 import SB_S from "./SB_S";
 import SB_L from "./SB_L";
+import Varient_4 from "./Varient_4";
 
 const SecondaryButton = () => {
   return (

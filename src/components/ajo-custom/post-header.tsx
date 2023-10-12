@@ -1,4 +1,8 @@
 import React from "react";
+import UserPostHeader from "./UserPostHeader";
+import VerifiedHiredPostHeaders from "./VerifiedHiredPostHeaders";
+import VerifiedUserPostHeader from "./VerifiedUserPostHeader";
+import RegisteredBrand from "./registered-brand";
 
 const PostHeader = () => {
   return (

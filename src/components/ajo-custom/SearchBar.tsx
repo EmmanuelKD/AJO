@@ -1,8 +1,7 @@
 import React from "react";
-// import Avater from "../icons/Avater.png"
-import AjoCoin from "./AjoCoin.svelte";
-import AllreadNotification from "./AllreadNotification.svelte";
-import HeaderAvater from "./HeaderAvater.svelte";
+import AjoCoin from "./ajo-coin";
+import AllreadNotification from "./allread-notification";
+import HeaderAvater from "./header-avater";
 
 const SearchBar = () => {
   return (

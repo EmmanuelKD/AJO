@@ -1,6 +1,5 @@
 import React from "react";
-
-import SAvater from "./SAvater.tsx";
+import SAvater from "./SAvater";
 
 const HeaderAvater = () => {
   return (
