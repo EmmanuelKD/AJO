@@ -15,9 +15,9 @@ import InActiveProfile from "./in-active-profile";
 const Menu = () => {
   return (
     <div>
-      <div class="w-52 flex-col justify-start items-start inline-flex">
-        <div class="w-52 relative flex flex-col left-[20px] top-[20px]">
-          <ActiveHome />
+      <div className="w-52 flex-col justify-start items-start inline-flex">
+        <div className="w-52 relative flex flex-col left-[20px] top-[20px]">
+          {/*<ActiveHome />*/}
           <InActiveHome />
           <ActiveMessage />
           <InActiveMessage />

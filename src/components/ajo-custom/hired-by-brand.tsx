@@ -1,5 +1,4 @@
 import React from "react";
-import HiredByBrand from "../icons/HiredByCF.png";
 
 const HiredByBrand = () => {
   return (

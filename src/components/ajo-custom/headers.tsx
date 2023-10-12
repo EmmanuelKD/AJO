@@ -1,12 +1,12 @@
 import React from "react";
-import Default from "./Default.svelte";
-import Varient_2 from "./Varient_2.svelte";
+import Varient_2 from "./Varient_2";
+import SearchBar from "./SearchBar";
 
 const Headers = () => {
   return (
     <div>
       <Varient_2 />
-      <Default />
+      <SearchBar />
     </div>
   );
 };

@@ -1,4 +1,6 @@
 import React from "react";
+import SAvater from "./SAvater";
+import VerifiedBrandIcon from "./VerifiedBrandIcon";
 
 const RegisterBrand = () => {
   return (
@@ -14,6 +16,7 @@ const RegisterBrand = () => {
               <VerifiedBrandIcon />
             </div>
           </div>
+
           <div className="text-zinc-900 text-xs font-normal font-['Montserrat'] leading-none">
             @christexfndn.sol
           </div>

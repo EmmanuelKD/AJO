@@ -1,6 +1,6 @@
 "use client";
 
-import RatingDialog from "@/components/rating-dialog";
+import RatingDialog from "@/components/kofi-components/rating-dialog";
 import { Products } from "@/firebase/collections/products";
 import { useContext, useEffect, useMemo, useState } from "react";
 import { AuthContext } from "../auth/context";
@@ -29,7 +29,7 @@ function ProductContextProvider(props: ProductContextProp) {
   function getProducts() {
     let productNeededReview = state.products.filter((products) => {
       return user?.purchased?.some(
-        (pro) => pro.productId === products.objectId && !pro.isReviewed && pro.dialogCancleCount<5
+        (pro) => pro.productId === products.objectId && !pro.isReviewed && pro.dialogCancleCount < 5
       );
     });
     setProductNeededReview(productNeededReview);
@@ -45,7 +45,7 @@ function ProductContextProvider(props: ProductContextProp) {
   }
 
   function loadUsersSpecificProduct(userID: string) {
-    
+
   }
 
   return (

@@ -1,11 +1,9 @@
-import React from "react";
-
-const SAvater = () => {
+export default function SAvater() {
   return (
     <div>
-      <img className="w-10 h-10 rounded-full" src="{SAvater}" />
+      <div>
+        <img className="w-10 h-10 rounded-full" src="" />
+      </div>
     </div>
   );
-};
-
-export default SAvater;
+}

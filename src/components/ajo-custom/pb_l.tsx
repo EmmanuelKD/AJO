@@ -1,6 +1,6 @@
 import React from "react";
 
-const pb_l = () => {
+const Pb_l = () => {
   return (
     <div>
       <div className="w-20 h-9 px-5 py-2 bg-pink-700 rounded-lg justify-center items-center inline-flex">
@@ -12,4 +12,4 @@ const pb_l = () => {
   );
 };
 
-export default pb_l;
+export default Pb_l;

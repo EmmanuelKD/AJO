@@ -1,6 +1,6 @@
 import React from "react";
 
-const Share = () => {
+const ShareButton = () => {
   return (
     <div>
       <a href="">
@@ -25,4 +25,4 @@ const Share = () => {
   );
 };
 
-export default Share;
+export default ShareButton;
