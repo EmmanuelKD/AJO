@@ -105,8 +105,10 @@ const Addproduct = () => {
                         </label>
                         <input hidden type="file" id="coverImage" />
                         <div className="justify-start items-center gap-2.5 inline-flex">
-                            <input className="w-3 h-3 bg-white rounded border border-zinc-200" type="checkbox" />
-                            <div className="text-gray-900 text-xs font-semibold font-['League Spartan'] leading-3">Cover Image</div>
+                            <input id='CoverImageCheckBox' className="w-3 h-3 bg-white rounded border border-zinc-200" type="checkbox" />
+                            <label htmlFor="CoverImageCheckBox">
+                                <div className="text-gray-900 text-xs font-semibold font-['League Spartan'] leading-3">Cover Image</div>
+                            </label>
                         </div>
                     </div>
                     <div className="self-stretch h-20 flex-col justify-start items-start gap-1 flex">
