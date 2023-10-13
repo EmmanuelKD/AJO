@@ -18,6 +18,7 @@ const config: Config = {
         sans: ["Roboto", "Arial", "sans"],
       },
       colors: {
+        HoverColor: "#B21575",
         white: "rgba(255,255,255)",
         black: "rgba(0,0,0)",
         "sys-light-primary": " rgba(178,21,117)",

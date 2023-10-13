@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import MainLayout from "./layout/main-layout";
 import TabsLayout from "./layout/tabs-layout";
+import FeedHome from "@/components/ajo-custom/Full components/FeedHome";
 
 function switchTabIndex(tab: string) {
   switch (tab) {
@@ -18,7 +19,7 @@ export default function Home() {
   const pages = useMemo(() => {
     let pageMap = new Map();
     pageMap.set("Feed", {
-      child: <>Feed place</>,
+      child: <FeedHome />,
       icon: null,
       // <svg
       //   xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +36,7 @@ export default function Home() {
       //   />
       // </svg>
     });
-    pageMap.set("Timeline", {
+    pageMap.set("Marketplace", {
       child: <>Marketplace</>,
       icon: null,
       // <svg

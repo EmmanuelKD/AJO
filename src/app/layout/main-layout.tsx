@@ -1,30 +1,66 @@
 "use client";
-import { Fragment, ReactNode, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import {
-  ChartBarSquareIcon,
-  Cog6ToothIcon,
-  FolderIcon,
-  GlobeAltIcon,
-  ServerIcon,
-  SignalIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
-import { Bars3Icon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import Varient_2 from "@/components/ajo-custom/Varient_2";
+import HolderIcon from "@/icons/holder";
+import {
+  AddFill,
+  AddLine,
+  Compass2Fill,
+  Compass2Line,
+  Home2Fill,
+  Home2Line,
+  Message2Fill,
+  Message2Line,
+  QuestionFill,
+  QuestionLine,
+} from "@fluent-ui/icons";
+import { ReactNode, useState } from "react";
 
 const navigation = [
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Deployments", href: "#", icon: ServerIcon, current: true },
-  { name: "Activity", href: "#", icon: SignalIcon, current: false },
-  { name: "Domains", href: "#", icon: GlobeAltIcon, current: false },
-  { name: "Usage", href: "#", icon: ChartBarSquareIcon, current: false },
-  { name: "Settings", href: "#", icon: Cog6ToothIcon, current: false },
+  {
+    name: "Home",
+    href: "#",
+    Icon: HolderIcon,
+    current: false,
+  },
+  {
+    name: "Explore",
+    href: "#",
+    Icon: HolderIcon,
+
+    current: true,
+  },
+  {
+    name: "Activity",
+    href: "#",
+    Icon: HolderIcon,
+
+    current: false,
+  },
+  {
+    name: "Create",
+    href: "#",
+    Icon: HolderIcon,
+
+    current: false,
+  },
+  {
+    name: "Message",
+    href: "#",
+    Icon: HolderIcon,
+
+    current: false,
+  },
+  {
+    name: "Help & Support",
+    href: "#",
+    Icon: HolderIcon,
+
+    current: false,
+  },
 ];
+
 const teams = [
-  { id: 1, name: "Planetaria", href: "#", initial: "P", current: false },
-  { id: 2, name: "Protocol", href: "#", initial: "P", current: false },
-  { id: 3, name: "Tailwind Labs", href: "#", initial: "T", current: false },
+  { id: 1, name: "Add Brand", href: "#", initial: "+", current: false },
 ];
 
 export default function MainLayout({ children }: { children: ReactNode }) {
@@ -48,80 +84,62 @@ function Drawer({
   setSidebarOpen: (_: boolean) => void;
 }) {
   return (
-    <div
-      className="
-  
-    w-full max-w-[318px] relative bg-white"
-    >
-      <div className="flex grow flex-col gap-y-5 ">
-        <div className="flex h-16 shrink-0 items-center t">
+    <div className="w-full max-w-[318px] relative bg-white flex-col">
+      <div className="flex grow flex-col gap-y-5 w-full">
+        <div className="flex flex-col items-center h-[96px]">
           <img
-            className="h-8 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-            alt="Your Company"
+            className=" max-w-[100px] bg-red-500 items-center"
+            src="asset/img/ajo.png"
+            alt="Ajo"
           />
         </div>
         <nav className="flex flex-1 flex-col">
-          <ul role="list" className="flex flex-1 flex-col gap-y-7">
-            <li>
-              <ul role="list" className="-mx-2 space-y-1">
-                {navigation.map((item) => (
-                  <li key={item.name}>
+          <ul role="list" className="flex flex-1 flex-col gap-y-4 items-center">
+            <li className=" space-y-1 w-full p-[8px]">
+              <ul role="list" className=" space-y-1 ">
+                {navigation.map(({ name, href, current, Icon }) => (
+                  <li key={name} className="w-full">
                     <a
-                      href={item.href}
+                      href={href}
                       className={`${
-                        item.current
-                          ? "bg-gray-800 text-white"
-                          : "text-gray-400 hover:text-white hover:bg-gray-800"
+                        current
+                          ? "bg-HoverColor text-white w-full text-center"
+                          : "text-gray-400 hover:text-white hover:bg-HoverColor"
                       } group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold`}
                     >
-                      <item.icon
-                        className="h-6 w-6 shrink-0"
-                        aria-hidden="true"
+                      <Icon
+                        color={"#000"}
+                        variant={current ? "solid" : "light"}
                       />
-                      {item.name}
+                      {name}
                     </a>
                   </li>
                 ))}
               </ul>
             </li>
             <li>
-              <div className="text-xs font-semibold leading-6 text-gray-400">
-                Your teams
+              <div className="text-xs font-semibold  text-gray-400">
+                Add Brand
               </div>
               <ul role="list" className="-mx-2 mt-2 space-y-1">
-                {teams.map((team) => (
-                  <li key={team.name}>
+                {teams.map(({ name, href, current, initial }) => (
+                  <li key={name}>
                     <a
-                      href={team.href}
+                      href={href}
                       className={`${
-                        team.current
-                          ? "bg-gray-800 text-white"
-                          : "text-gray-400 hover:text-white hover:bg-gray-800"
-                      } group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold`}
+                        current
+                          ? "bg-HoverColor text-white"
+                          : "text-gray-400 hover:text-white hover:bg-HoverColor"
+                      } group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold w-full`}
                     >
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">
-                        {team.initial}
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-HoverColor bg-HoverColor text-[0.625rem] font-medium text-white group-hover:text-white">
+                        {initial}
                       </span>
-                      <span className="truncate">{team.name}</span>
+                      <span className="truncate">{name}</span>
                     </a>
                   </li>
                 ))}
               </ul>
-            </li>
-            <li className="-mx-6 mt-auto">
-              <a
-                href="#"
-                className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white hover:bg-gray-800"
-              >
-                <img
-                  className="h-8 w-8 rounded-full bg-gray-800"
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt=""
-                />
-                <span className="sr-only">Your profile</span>
-                <span aria-hidden="true">Tom Cook</span>
-              </a>
             </li>
           </ul>
         </nav>
