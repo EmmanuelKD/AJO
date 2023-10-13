@@ -3,7 +3,7 @@ import React from 'react'
 const CreateBrand = () => {
     return (
         <div className="w-full pt-3 flex-col justify-start gap-4 inline-flex">
-            <div className="flex-col justify-start items-start gap-6 flex">
+            <div className="w-full flex-col justify-start items-start gap-6 flex">
                 <div className="text-black text-5xl font-bold font-['League Spartan'] leading-10 whitespace-nowrap">Create your brand</div>
                 <div className="w-full flex-col justify-start items-start gap-px inline-flex ">
                     <div className="text-black text-base font-semibold font-['League Spartan'] leading-normal">Brand Photo</div>
@@ -22,20 +22,12 @@ const CreateBrand = () => {
                         <div className="w-64 justify-start items-start gap-2.5 inline-flex">
                             <div className="text-gray-900 text-base font-semibold font-['League Spartan'] leading-normal">Brand Name</div>
                         </div>
-                        <div className="self-stretch grow shrink basis-0 pl-5 pr-4 py-3 bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200 justify-start items-center gap-2.5 inline-flex">
-                            {/* <div className="grow shrink basis-0 h-6 justify-start items-center gap-28 flex"> */}
-                                <input className="text-gray-400 text-base font-normal font-['League Spartan'] leading-normal border-0 focus:border-0 bg-none" type="text" />
-                            {/* </div> */}
-                        </div>
+                        <input className="text-gray-400 text-base font-normal font-['League Spartan'] leading-normal bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200" type="text" />
                     </div>
                 </div>
-                <div className="w-96 h-56 flex-col justify-start items-start gap-2.5 inline-flex">
+                <div className="w-full h-56 flex-col justify-start items-start gap-2.5 inline-flex">
                     <div className="text-gray-900 text-base font-semibold font-['League Spartan'] leading-normal">Brand Description</div>
-                    <div className="self-stretch h-40 flex-col justify-start items-start flex">
-                        <div className="self-stretch grow shrink basis-0 p-5 bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200 justify-start items-start gap-2.5 inline-flex">
-                            <input placeholder='Write something that accurately describes your brand.' className=" w-full text-gray-400 text-base font-normal font-['League Spartan'] leading-normal" type=" textarea" />
-                        </div>
-                    </div>
+                    <textarea className="bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200 items-start gap-2.5  self-stretch h-40 flex-col justify-start w-full flex" />
                     <div className="self-stretch justify-end items-end gap-1 inline-flex">
                         <div className="text-right text-gray-500 text-xs font-normal font-['Montserrat'] leading-none">0/250</div>
                     </div>
@@ -44,30 +36,26 @@ const CreateBrand = () => {
                     <div className="w-64 justify-start items-start gap-2.5 inline-flex">
                         <div className="text-gray-900 text-base font-semibold font-['League Spartan'] leading-normal">Brand Category</div>
                     </div>
-                    <div className="self-stretch h-11 px-5 py-3 bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200 justify-start items-center gap-2.5 inline-flex">
-                        <div className="grow shrink basis-0 h-6 justify-between items-center flex">
-                            <div className="text-gray-400 text-base font-normal font-['League Spartan'] leading-normal">Select a category</div>
-                            <div className="w-4 h-4 relative" />
-                        </div>
-                    </div>
+                    <select className="text-gray-400  text-base font-normal font-['League Spartan'] leading-normal self-stretch px-5 py-3 bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200 justify-start items-center gap-2.5 inline-flex" name="" id="">
+                        <option className=" py-3 px-5 my-2" selected value="null"> Select a category</option>
+                    </select>
                 </div>
                 <div className="self-stretch h-20 flex-col justify-start items-start gap-2.5 flex">
                     <div className="w-64 justify-start items-start gap-2.5 inline-flex">
                         <div className="text-gray-900 text-base font-semibold font-['League Spartan'] leading-normal">What’s your niche?</div>
                     </div>
-                    <div className="w-80 h-11 px-5 py-3 bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200 justify-start items-center gap-2.5 inline-flex">
-                        <div className="h-6 justify-between items-center flex">
-                            <div className="text-gray-400 text-base font-normal font-['League Spartan'] leading-normal">Select a sub-category</div>
-                            <div className="w-4 h-4 relative" />
-                        </div>
-                    </div>
+                    {/* <div className=""> */}
+                        <select className=" focus:border-0 w-full px-5 py-3 bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200 justify-start items-center gap-2.5 inline-flex text-gray-400  text-base font-normal font-['League Spartan'] leading-normal self-stretch px-5 py-3 bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200 justify-start items-center gap-2.5 inline-flex" name="" id="">
+                            <option className=" py-3 px-5 my-2" selected value="null"> Select a Sub-category</option>
+                        </select>
+                    {/* </div> */}
                 </div>
             </div>
-            <div className="self-stretch p-2.5 justify-end items-end gap-2.5 inline-flex">
+            <button className="self-stretch p-2.5 justify-end items-end gap-2.5 inline-flex">
                 <div className="px-5 py-2 bg-pink-700 rounded-lg justify-center items-center flex">
                     <div className="text-white text-base font-bold font-['League Spartan'] leading-tight">Submit</div>
                 </div>
-            </div>
+            </button>
         </div>
     )
 }
