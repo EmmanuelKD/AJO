@@ -9,9 +9,9 @@ import { F_DB } from "../database";
 import { app } from "../config";
 import _ from "lodash";
 
-export class BrandClass extends F_DB {
+export class UsersActionClass extends F_DB {
   constructor() {
-    super(app, "brand");
+    super(app, "users-action");
   }
 
   async addListener(onDone: (snapshot: QuerySnapshot<DocumentData>) => void) {
@@ -21,7 +21,7 @@ export class BrandClass extends F_DB {
     }
   }
 
-  async saveBrandData(data: Brand) {
+  async addUsersAction(data: UserAction) {
     let _data = _(data).omitBy(_.isUndefined).value();
     return await this.addToDocumentCollection({
       docId: data.objectId,
@@ -29,20 +29,15 @@ export class BrandClass extends F_DB {
     });
   }
 
-  async updateBrandData(data: Brand) {
-    let _data = _(data).omitBy(_.isUndefined).value();
-    return await this.updateDocument({
-      documentId: data.objectId as string,
-      data: _data,
+  async removeUsersAction(id: string) {
+    return await this.deleteDocument({
+      documentId: id,
     });
   }
 
-  async addProductToCart(usersId: string, productId: string) {
-    return await this.addToDocumentArray({
-      docId: usersId as string,
-      arrayKey: "productInCart",
-      value: productId,
-    });
+  findCurrentUsersAction(usersId: string, reactions: UserAction[]) {
+    let found = reactions.filter((a) => a.actionById == usersId);
+    return found;
   }
-
+  
 }

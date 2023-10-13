@@ -77,10 +77,17 @@ type ProductPurchases = entityType & {
 type Post = entityType & {
   media: Media[];
   caption: string;
-  userId: string;
+  contentText: string;
+  usersId: string;
   by: PostOwner;
+  aliasesReferences: AliasReference[];
 };
 
+type AliasReference = {
+  refName: string;
+  refId: string;
+  refType: EntityType;
+};
 type PostOwner = Owner & {};
 
 type Brand = entityType & {
@@ -97,12 +104,13 @@ type Roles = "admin" | "ambassadors";
 type BrandOwner = Owner & {
   role?: Roles;
 };
+type OwnersEntityType = "user" | "brand" | "product" | "post";
 
 type Owner = entityType & {
   imageSrc: string;
-  usersName: string;
-  usersId: string;
-  type: "user" | "brand";
+  ownersName: string;
+  ownersId: string;
+  type: OwnersEntityType;
 };
 
 type Media = entityType & {
@@ -111,12 +119,25 @@ type Media = entityType & {
   type: "video" | "image";
 };
 
+type Comment = entityType & {
+  parentId: string;
+  parent?: Comment;
+  childrenId: string[];
+  childrens: Comment[];
+  media: Media;
+  content: string;
+  aliasesReferences: AliasReference[];
+  reactions: UserAction[];
+  reactionsId: string[];
+};
+
 type ActionOwner = Owner & {};
-type UserAction = {
+
+type UserAction = entityType & {
   actionBy?: ActionOwner;
   actionTo?: ActionOwner;
   actionById: string;
   actionToId: string;
   actionDate: Date;
-  type: "like" | "comment" | "follow";
+  type: "like" | "comment" | "follow" | "Flag";
 };
