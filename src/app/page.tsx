@@ -1,16 +1,16 @@
-import HomeTabs from "@/components/ajo-custom/home-tabs";
+import CreateBrand from "@/components/ajo-custom/Full components/CreateBrand";
 import MainLayout from "./layout/main-layout";
 
-
+ 
 export default function Home() {
   return (
     <MainLayout >
-      {/* This is the Home Tabs */}
-      <Home />
-      {/* Create Brand */}
+      {/* Content goes here */}
 
 
+      {/* //Create Brand */}
+      <CreateBrand/>
     </MainLayout>
-
+ 
   );
 }
