@@ -27,14 +27,14 @@ const teams = [
   { id: 3, name: "Tailwind Labs", href: "#", initial: "T", current: false },
 ];
 
-export default function MainLayout() {
+export default function MainLayout({ children }: { children: ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
     <div className="relative flex flex-row flex-nowrap  justify-evenly gap-[19px]   ml-[9px]  mr-[9px]">
       <Drawer setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
       <ContentWrapper setSidebarOpen={setSidebarOpen}>
-        <div></div>
+        {children}
       </ContentWrapper>
     </div>
   );

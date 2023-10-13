@@ -27,16 +27,18 @@ const Varient_2 = () => {
                 </svg>
               </span>
               <input
-                className="rounded-lg bg-pink-700 bg-opacity-10 text-zinc-900 text-base font-normal font-['League Spartan'] leading-normal w-full py-2 pl-10 pr-4"
+                className="rounded-lg bg-pink-700 bg-opacity-10 text-zinc-900 text-base font-normal font-['League Spartan'] leading-normal w-full max-w-[680px] py-2 pl-10 pr-4"
                 type="text"
                 placeholder="Search..."
               />
             </div>
-            <div className="w-8 h-8 relative">
-              {isAuthorized && <AllreadNotification />}
-            </div>
-            <div className="pr-1.5 rounded-2xl justify-start items-center gap-1 flex">
-              {isAuthorized ? <HeaderAvater /> : <LoginButton />}
+            <div className="max-w-[281px] flex flex-row gap-[10px]">
+              <div className="w-8 h-8 relative">
+                {isAuthorized && <AllreadNotification />}
+              </div>
+              <div className="pr-1.5 rounded-2xl justify-start items-center gap-1 flex">
+                {isAuthorized ? <HeaderAvater /> : <LoginButton />}
+              </div>
             </div>
           </div>
         </div>
