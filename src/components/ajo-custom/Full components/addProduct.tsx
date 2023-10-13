@@ -2,6 +2,8 @@ import React from 'react'
 
 const Addproduct = () => {
     return (
+
+        // s.o.s
         <div className="flex flex-col gap-3">
             <div className="w-full h-full gap-6 inline-flex">
                 <div className="w-full grow shrink basis-0 self-stretch flex-col justify-start items-start gap-6 inline-flex">
