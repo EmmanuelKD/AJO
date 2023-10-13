@@ -2,11 +2,14 @@ import React from 'react'
 
 const CreateBrand = () => {
     return (
+
+        //  SOS
         <div className="w-full pt-3 flex-col justify-start gap-4 inline-flex">
             <div className="w-full flex-col justify-start items-start gap-6 flex">
                 <div className="text-black text-5xl font-bold font-['League Spartan'] leading-10 whitespace-nowrap">Create your brand</div>
                 <div className="w-full flex-col justify-start items-start gap-px inline-flex ">
                     <div className="text-black text-base font-semibold font-['League Spartan'] leading-normal">Brand Photo</div>
+                    <label htmlFor="BrandPhoto">
                     <div className="justify-start items-start gap-2.5 inline-flex">
                         <div className="p-2.5 flex-col justify-start items-start gap-2.5 inline-flex relative">
                             <div className="w-24 h-24 bg-pink-700 bg-opacity-10 rounded-full  flex justify-center items-center">
@@ -16,6 +19,8 @@ const CreateBrand = () => {
                                 </svg></div></div>
                         </div>
                     </div>
+                    </label>
+                    <input type="file" hidden id='BrandPhoto' />
                 </div>
                 <div className="justify-start items-start gap-2.5 inline-flex">
                     <div className=" grow shrink basis-0 h-20 flex-col justify-start items-start gap-2.5 inline-flex">
@@ -27,7 +32,7 @@ const CreateBrand = () => {
                 </div>
                 <div className="w-full h-56 flex-col justify-start items-start gap-2.5 inline-flex">
                     <div className="text-gray-900 text-base font-semibold font-['League Spartan'] leading-normal">Brand Description</div>
-                    <textarea className="bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200 items-start gap-2.5  self-stretch h-40 flex-col justify-start w-full flex" />
+                    <textarea placeholder='Write something that accurately describes your brand' className="bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200 items-start gap-2.5  self-stretch h-40 flex-col justify-start w-full flex" />
                     <div className="self-stretch justify-end items-end gap-1 inline-flex">
                         <div className="text-right text-gray-500 text-xs font-normal font-['Montserrat'] leading-none">0/250</div>
                     </div>
