@@ -2,10 +2,10 @@ import React from 'react'
 
 const CreateBrand = () => {
     return (
-        <div className="w-96 h-96 px-12 pt-3 flex-col justify-start items-center gap-4 inline-flex">
+        <div className="w-full pt-3 flex-col justify-start gap-4 inline-flex">
             <div className="flex-col justify-start items-start gap-6 flex">
                 <div className="text-black text-5xl font-bold font-['League Spartan'] leading-10 whitespace-nowrap">Create your brand</div>
-                <div className="w-96 h-36 flex-col justify-start items-start gap-px inline-flex">
+                <div className="w-full flex-col justify-start items-start gap-px inline-flex ">
                     <div className="text-black text-base font-semibold font-['League Spartan'] leading-normal">Brand Photo</div>
                     <div className="justify-start items-start gap-2.5 inline-flex">
                         <div className="p-2.5 flex-col justify-start items-start gap-2.5 inline-flex relative">
@@ -17,23 +17,23 @@ const CreateBrand = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-64 h-20 justify-start items-start gap-2.5 inline-flex">
-                    <div className="grow shrink basis-0 h-20 flex-col justify-start items-start gap-2.5 inline-flex">
+                <div className="justify-start items-start gap-2.5 inline-flex">
+                    <div className=" grow shrink basis-0 h-20 flex-col justify-start items-start gap-2.5 inline-flex">
                         <div className="w-64 justify-start items-start gap-2.5 inline-flex">
                             <div className="text-gray-900 text-base font-semibold font-['League Spartan'] leading-normal">Brand Name</div>
                         </div>
                         <div className="self-stretch grow shrink basis-0 pl-5 pr-4 py-3 bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200 justify-start items-center gap-2.5 inline-flex">
-                            <div className="grow shrink basis-0 h-6 justify-start items-center gap-28 flex">
-                                <div className="text-gray-400 text-base font-normal font-['League Spartan'] leading-normal">Enter your brand name here</div>
-                            </div>
+                            {/* <div className="grow shrink basis-0 h-6 justify-start items-center gap-28 flex"> */}
+                                <input className="text-gray-400 text-base font-normal font-['League Spartan'] leading-normal border-0 focus:border-0 bg-none" type="text" />
+                            {/* </div> */}
                         </div>
                     </div>
                 </div>
-                <div className="h-56 flex-col justify-start items-start gap-2.5 flex">
+                <div className="w-96 h-56 flex-col justify-start items-start gap-2.5 inline-flex">
                     <div className="text-gray-900 text-base font-semibold font-['League Spartan'] leading-normal">Brand Description</div>
                     <div className="self-stretch h-40 flex-col justify-start items-start flex">
                         <div className="self-stretch grow shrink basis-0 p-5 bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200 justify-start items-start gap-2.5 inline-flex">
-                            <div className="text-gray-400 text-base font-normal font-['League Spartan'] leading-normal">Write something that accurately describes your brand.</div>
+                            <input placeholder='Write something that accurately describes your brand.' className=" w-full text-gray-400 text-base font-normal font-['League Spartan'] leading-normal" type=" textarea" />
                         </div>
                     </div>
                     <div className="self-stretch justify-end items-end gap-1 inline-flex">
