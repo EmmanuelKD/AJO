@@ -7,8 +7,8 @@ type ProductContextProp = {
 };
 
 type ProductContextState = {
-  products: AppProduct[];
-  // usersProducts: AppProduct[];
+  products: AjoProduct[];
+  // usersProducts: AjoProduct[];
   usersLikedProducts: string[];
   usersCartProducts: string[];
 };

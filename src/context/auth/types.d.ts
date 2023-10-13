@@ -7,13 +7,13 @@ type AuthContextProp = {
 };
 
 type AuthContextState = {
-  user?:  AppUser;
+  user?:  AjoUser;
   userStorData?: InstitutionUsersType;
   authError?: string;
 };
 
 type AuthContextType = {
-  loadUserToState: (user?: AppUser) => void;
-  user?:  AppUser;
+  loadUserToState: (user?: AjoUser) => void;
+  user?:  AjoUser;
   isUserLoggedIn: () => boolean;
 };

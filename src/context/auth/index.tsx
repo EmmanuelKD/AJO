@@ -17,7 +17,7 @@ function AuthContextProvider(props: AuthContextProp) {
     if (!state.user) {
       auth.onAuthStateChange(loadUserToState, navigate);
 
-      let localUser = auth.getUserFromLocalStorage() as AppUser;
+      let localUser = auth.getUserFromLocalStorage() as AjoUser;
 
       if (localUser) loadUserToState(localUser);
       let userStorData = auth.getUserFromLocalStorage();
@@ -39,13 +39,13 @@ function AuthContextProvider(props: AuthContextProp) {
             // Document added
             const documentData = change.doc.data();
             if (documentData["objectId"] === userStorData?.objectId) {
-              setUserStoreData(documentData as AppUser);
+              setUserStoreData(documentData as AjoUser);
             }
           }
           if (change.type === "modified") {
             const documentData = change.doc.data();
             if (documentData["objectId"] === userStorData?.objectId) {
-              setUserStoreData(documentData as AppUser);
+              setUserStoreData(documentData as AjoUser);
             }
           }
           if (change.type === "removed") {
@@ -61,13 +61,13 @@ function AuthContextProvider(props: AuthContextProp) {
     // react-hooks/exhaustive-deps
   }, [state]);
 
-  function setUserStoreData(userStorData: AppUser) {
+  function setUserStoreData(userStorData: AjoUser) {
     // console.log(userStorData);
     auth.saveUserToLocalStorage(userStorData);
     setState((prev) => ({ ...prev, userStorData }));
   }
 
-  function loadUserToState(user?: AppUser) {
+  function loadUserToState(user?: AjoUser) {
     setState((prev) => ({ ...prev, user }));
   }
 

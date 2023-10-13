@@ -21,7 +21,7 @@ export class UsersClass extends F_DB {
     }
   }
 
-  async saveUsersData(data: AppUser) {
+  async saveUsersData(data: AjoUser) {
     let _data = _(data).omitBy(_.isUndefined).value();
     return await this.addToDocumentCollection({
       docId: data.objectId,
@@ -29,7 +29,7 @@ export class UsersClass extends F_DB {
     });
   }
 
-  async updateUsersData(data: AppUser) {
+  async updateUsersData(data: AjoUser) {
     let _data = _(data).omitBy(_.isUndefined).value();
     return await this.updateDocument({
       documentId: data.objectId as string,
@@ -112,7 +112,7 @@ export class UsersClass extends F_DB {
     }).then((snap) => {
       if (!snap?.empty) {
         return snap?.docs.map((doc) => {
-          return doc.data() as AppUser;
+          return doc.data() as AjoUser;
         })[0];
       } else {
         return null;

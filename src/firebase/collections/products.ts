@@ -21,7 +21,7 @@ export class Products extends F_DB {
     }
   }
 
-  async saveProductData(data: AppProduct) {
+  async saveProductData(data: AjoProduct) {
     let _data = _(data).omitBy(_.isUndefined).value();
     return await this.addToDocumentCollection({
       docId: data.objectId,
@@ -35,7 +35,7 @@ export class Products extends F_DB {
     }).then((snap) => {
       if (!snap?.empty) {
         return snap?.docs.map((doc) => {
-          return doc.data() as AppProduct;
+          return doc.data() as AjoProduct;
         })[0];
       } else {
         return null;
@@ -50,7 +50,7 @@ export class Products extends F_DB {
     }).then((snap) => {
       if (!snap?.empty) {
         return snap?.docs.map((doc) => {
-          return doc.data() as AppProduct;
+          return doc.data() as AjoProduct;
         });
       } else {
         return null;

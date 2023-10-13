@@ -17,7 +17,7 @@ const firebaseConfig = {
   storageBucket: "uni-buy-8cb9e.appspot.com",
   messagingSenderId: "663962850871",
   appId: "1:663962850871:web:8749cdd1af1a9c632e91b2",
-  measurementId: "G-BW8LV2WQBR",
+  measurementId: "G-BW8LV2WQBR", 
 };
 
 // Initialize Firebase
