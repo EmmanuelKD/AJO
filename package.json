@@ -21,6 +21,7 @@
     "date-fns": "^2.30.0",
     "firebase": "^10.4.0",
     "formik": "^2.4.5",
+    "heroicons": "^2.0.18",
     "lodash": "^4.17.21",
     "nearest-color": "^0.4.4",
     "next": "^13.5.4",
