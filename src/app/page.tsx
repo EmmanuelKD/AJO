@@ -1,6 +1,7 @@
 import CreateBrand from "@/components/ajo-custom/Full components/CreateBrand";
 import MainLayout from "./layout/main-layout";
 import Addproduct from "@/components/ajo-custom/Full components/addProduct";
+import BrandProfile from "@/components/ajo-custom/Full components/BrandProfile";
 
  
 export default function Home() {
@@ -17,6 +18,8 @@ export default function Home() {
       <Addproduct/>
 
       <hr  className="border-2"/>
+
+      <BrandProfile/>
 
       </div>      
     </MainLayout>
