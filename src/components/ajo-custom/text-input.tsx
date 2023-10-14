@@ -1,11 +1,9 @@
-import React from 'react'
+import React from "react";
 
 const TextInput = () => {
-    return (
-        <div>
-            <div className="w-3/4 h-40 relative rounded-lg border border-black m-auto"></div>
-        </div>
-    )
-}
+  return (
+    <div className=" mt-5 w-full  h-40 relative rounded-lg border border-black m-auto"></div>
+  );
+};
 
-export default TextInput
+export default TextInput;

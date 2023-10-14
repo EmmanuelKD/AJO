@@ -119,11 +119,11 @@ type Media = entityType & {
   type: "video" | "image";
 };
 
-type Comment = entityType & {
+type CommentType = entityType & {
   parentId: string;
-  parent?: Comment;
+  parent?: CommentType;
   childrenId: string[];
-  childrens: Comment[];
+  childrens: CommentType[];
   media: Media;
   content: string;
   aliasesReferences: AliasReference[];
