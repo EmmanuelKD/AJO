@@ -62,7 +62,13 @@ const navigation = [
 ];
 
 const teams = [
-  { id: 1, name: "Add Brand", href: "#", initial: "+", current: false },
+  {
+    id: 1,
+    name: "Add Brand",
+    href: routes.main.addBrand,
+    initial: "+",
+    current: false,
+  },
 ];
 
 export default function MainLayout({ children }: { children: ReactNode }) {
@@ -97,7 +103,7 @@ function Drawer({
         </div>
         <nav className="flex flex-1 flex-col">
           <ul role="list" className="flex flex-1 flex-col gap-y-4 items-center">
-            <li className=" space-y-1 w-full p-[8px]">
+            <li className="space-y-1 w-full p-[8px]">
               <ul role="list" className=" space-y-1 ">
                 {navigation.map(({ name, href, current, Icon }) => (
                   <li key={name} className="w-full">
@@ -110,7 +116,7 @@ function Drawer({
                       } group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold`}
                     >
                       <Icon
-                        color={"#000"}
+                        color={current ? "#fff" : "#000"}
                         variant={current ? "solid" : "light"}
                       />
                       {name}
@@ -119,8 +125,8 @@ function Drawer({
                 ))}
               </ul>
             </li>
-            <li>
-              <div className="text-xs font-semibold  text-gray-400">
+            <li className="space-y-1 w-full p-[8px]">
+              <div className=" text-xs font-semibold  text-gray-400">
                 Add Brand
               </div>
               <ul role="list" className="-mx-2 mt-2 space-y-1">
