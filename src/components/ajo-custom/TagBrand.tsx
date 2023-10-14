@@ -2,14 +2,7 @@ import React from "react";
 
 const TagBrand = () => {
   return (
-    <div>
-      <img
-        className="self-stretch grow shrink basis-0 rounded-full"
-        src="{TagBrand}"
-        alt=""
-      />
-      <span></span>
-    </div>
+    <img className="w-8 h-8 rounded-full" src="/asset/img/cxf-tag.png" />
   );
 };
 

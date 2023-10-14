@@ -3,6 +3,8 @@ import BrandActivityFeed from '../brand-activity-feed'
 import BrandPostOverview from '../brand-post-overview'
 
 const BrandProfile = () => {
+
+  // S.O.S
   return (
     <div className="w-full px-12 py-3 flex-col justify-start items-center gap-4 inline-flex relative">
       <div className="self-stretch flex-col justify-start items-center gap-4 flex">
