@@ -14,7 +14,7 @@ import {
   QuestionFill,
   QuestionLine,
 } from "@fluent-ui/icons";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ReactNode, useState } from "react";
 
 const navigation = [
@@ -69,7 +69,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
-    <div className="relative flex flex-row flex-nowrap  justify-evenly gap-[19px]   ml-[9px]  mr-[9px]">
+    <div className="h-screen relative flex flex-row flex-nowrap  justify-evenly gap-[19px]   ml-[9px]  mr-[9px]">
       <Drawer setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
       <ContentWrapper setSidebarOpen={setSidebarOpen}>
         {children}
@@ -86,12 +86,12 @@ function Drawer({
   setSidebarOpen: (_: boolean) => void;
 }) {
   return (
-    <div className="w-full max-w-[318px] relative bg-white flex-col">
+    <div className="w-full h-full max-w-[318px]  bg-white flex-col static">
       <div className="flex grow flex-col gap-y-5 w-full">
         <div className="flex flex-col items-center h-[96px]">
           <img
             className=" max-w-[100px] bg-red-500 items-center"
-            src="asset/img/ajo.png"
+            src="/asset/img/ajo.png"
             alt="Ajo"
           />
         </div>
@@ -99,24 +99,27 @@ function Drawer({
           <ul role="list" className="flex flex-1 flex-col gap-y-4 items-center">
             <li className=" space-y-1 w-full p-[8px]">
               <ul role="list" className=" space-y-1 ">
-                {navigation.map(({ name, href, current, Icon }) => (
-                  <li key={name} className="w-full">
-                    <Link
-                      href={href}
-                      className={`${
-                        current
-                          ? "bg-HoverColor text-white w-full text-center"
-                          : "text-gray-400 hover:text-white hover:bg-HoverColor"
-                      } group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold`}
-                    >
-                      <Icon
-                        color={"#000"}
-                        variant={current ? "solid" : "light"}
-                      />
-                      {name}
-                    </Link>
-                  </li>
-                ))}
+                {navigation.map(({ name, href, Icon }) => {
+                  let current = window.location.pathname === href;
+                  return (
+                    <li key={name} className="w-full">
+                      <a
+                        href={href}
+                        className={`${
+                          current
+                            ? "bg-HoverColor text-white w-full text-center"
+                            : "text-gray-400 hover:text-white hover:bg-HoverColor"
+                        } group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold`}
+                      >
+                        <Icon
+                          color={"#000"}
+                          variant={current ? "solid" : "light"}
+                        />
+                        {name}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </li>
             <li>
@@ -159,9 +162,32 @@ function ContentWrapper({
 }) {
   // max-w-[928px]
   return (
-    <div className="w-full  bg-white rounded-sm p-[30px] pt-[12px] pb-[12px]">
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column" /* or row depending on your layout */,
+        alignItems: "stretch",
+        justifyContent: "flex-start",
+        height: "100%",
+      }}
+      className="w-full h-full bg-white  rounded-sm p-[30px] pt-[12px] pb-[12px]"
+    >
       <Varient_2 />
-      <main className="pb-[10px]">{children}</main>
+      <main
+        style={{
+          flex: 1,
+          display: "flex",
+          height: "100%",
+          flexDirection: "column" /* or row depending on your layout */,
+          alignItems: "start",
+          overflow: "auto" /* Adds scrollbars when content overflows */,
+
+          justifyContent: "flex-start",
+        }}
+        className="pb-[10px]"
+      >
+        {children}
+      </main>
     </div>
   );
 }
