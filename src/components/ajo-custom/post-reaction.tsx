@@ -10,7 +10,7 @@ import ShareButton from "./share";
 const PostReaction = () => {
   return (
     
-      <div className="w-full justify-between items-center gap-20 inline-flex">
+      <div className="w-full justify-between items-center gap-20 inline-flex px-5">
         {/* <Unliked /> */}
         <Liked />
         <CommentLogo />

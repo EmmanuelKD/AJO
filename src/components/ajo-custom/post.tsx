@@ -7,6 +7,7 @@ import UserPost from './user-post'
 import SAvater from './SAvater'
 import PostReaction from './post-reaction'
 import Rating from './rating'
+import PostTag_A_Product from './post-tag-product'
 
 function Post() {
     return (
@@ -58,26 +59,7 @@ function Post() {
                         </div>
                     </div>
                     <div className="self-stretch text-black text-base font-normal font-['League Spartan'] leading-normal">In the spirit of Rick Astley, I vow to never give you up or ever let you down.</div>
-                    <div className="self-stretch bg-pink-700 bg-opacity-5 rounded-lg justify-start items-center gap-2.5 inline-flex">
-                        <div className="p-2.5 justify-start items-start gap-2.5 flex">
-                            <img className="w-10 h-10 rounded" src="https://via.placeholder.com/40x40" />
-                        </div>
-                        <div className="h-10 flex-col justify-center items-start inline-flex">
-                            <div className="text-black text-sm font-normal font-['Montserrat'] leading-tight">Ray Ban RB4184 Square Sunglasses</div>
-                            <div className="self-stretch justify-start items-center gap-3 inline-flex">
-                                <div className="text-black text-xs font-light font-['League Spartan'] leading-none">SLL 1,280</div>
-                                <div className="text-pink-800 text-xs font-medium font-['League Spartan'] leading-none">TeeCee’s Fashion</div>
-                                <div className="justify-start items-start flex">
-                                    <div className="w-3 h-3 relative"><Rating/></div>
-                                    <div className="w-3 h-3 relative"><Rating/></div>
-                                    <div className="w-3 h-3 relative"><Rating/></div>
-                                    <div className="w-3 h-3 relative"><Rating/></div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div className="w-6 h-6 left-[802px] top-[18px] absolute" />
-                    </div>
+                    <PostTag_A_Product/>
                     <PostReaction/>
                 </div>
 
