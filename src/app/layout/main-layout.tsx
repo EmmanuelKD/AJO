@@ -7,6 +7,7 @@ import {
   AddLine,
   Compass2Fill,
   Compass2Line,
+  Compasses2Fill,
   Home2Fill,
   Home2Line,
   Message2Fill,
@@ -21,13 +22,13 @@ const navigation = [
   {
     name: "Home",
     href: routes.main.home,
-    Icon: HolderIcon,
+    Icon: Home2Fill,
     current: false,
   },
   {
     name: "Explore",
     href: routes.main.explore,
-    Icon: HolderIcon,
+    Icon: Compasses2Fill,
 
     current: true,
   },
@@ -41,7 +42,7 @@ const navigation = [
   {
     name: "Create",
     href: routes.main.create,
-    Icon: HolderIcon,
+    Icon: AddFill,
 
     current: false,
   },
@@ -55,7 +56,7 @@ const navigation = [
   {
     name: "Help & Support",
     href: routes.main.helpAndSupport,
-    Icon: HolderIcon,
+    Icon: QuestionFill,
 
     current: false,
   },
