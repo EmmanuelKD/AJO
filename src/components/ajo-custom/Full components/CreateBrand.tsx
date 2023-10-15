@@ -3,7 +3,9 @@
 import { NotificationContext } from "@/context/notification/context";
 import { UsersClass } from "@/firebase/collections/users";
 import { FileStorage } from "@/firebase/storage";
-import React, { useContext, useState } from "react";
+import { Listbox, Transition } from "@headlessui/react";
+import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/24/outline";
+import React, { Fragment, useContext, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
 const CreateBrand = () => {
@@ -65,8 +67,8 @@ const CreateBrand = () => {
   });
 
   return (
-    <div className="w-full pt-3 flex-col justify-start gap-4 inline-flex mx-[48px] my-[12px]">
-      <div className="w-full flex-col justify-start items-start gap-6 flex">
+    <div className="w-full pt-3 flex-col justify-start gap-4 inline-flex ">
+      <div className=" mx-[48px] my-[12px] flex-col justify-start items-start gap-6 flex">
         <div className="text-black text-5xl font-bold font-['League Spartan'] leading-10 whitespace-nowrap">
           Create your brand
         </div>
@@ -125,21 +127,6 @@ const CreateBrand = () => {
             </p>
           </div> */}
         </div>
-        {/* <div className="w-full flex-col justify-start items-start gap-px inline-flex">
-          <div className="text-black text-base font-semibold font-['League Spartan'] leading-normal">
-            Brand Photo
-          </div>
-          <label htmlFor="BrandPhoto">
-            <div className="justify-start items-start gap-2.5 inline-flex">
-              <div className="p-2.5 flex-col justify-start items-start gap-2.5 inline-flex relative">
-                <div className="w-24 h-24 bg-pink-700 bg-opacity-10 rounded-full  flex justify-center items-center">
-                  // Place the SVG or image here  
-                </div>
-              </div>
-            </div>
-          </label>
-          <input type="file" id="BrandPhoto" accept="image/*" required />
-        </div> */}
 
         <div className="justify-start items-start gap-2.5 inline-flex">
           <div className="grow shrink basis-0 h-20 flex-col justify-start items-start gap-2.5 inline-flex">
@@ -150,7 +137,7 @@ const CreateBrand = () => {
             </div>
             <input
               type="text"
-              className="text-gray-400 text-base font-normal font-['League Spartan'] leading-normal bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200"
+              className="text-gray-400 min-w-[250px] text-base font-normal font-['League Spartan'] leading-normal bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200"
               placeholder="Enter brand name"
               required
             />
@@ -177,18 +164,10 @@ const CreateBrand = () => {
               Brand Category
             </div>
           </div>
-          <select
-            className="text-gray-400  text-base font-normal font-['League Spartan'] leading-normal self-stretch px-5 py-3 bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200 justify-start items-center gap-2.5 inline-flex"
-            name="brandCategory"
-            id="brandCategory"
-            required
-          >
-            <option className="py-3 px-5 my-2" value="">
-              Select a category
-            </option>
-          </select>
+          <SelectList list={BrandCatiegories} />
+         
         </div>
-        <div className="self-stretch h-20 flex-col justify-start items-start gap-2.5 flex">
+        {/* <div className="self-stretch h-20 flex-col justify-start items-start gap-2.5 flex">
           <div className="w-64 justify-start items-start gap-2.5 inline-flex">
             <div className="text-gray-900 text-base font-semibold font-['League Spartan'] leading-normal">
               What’s your niche?
@@ -204,9 +183,9 @@ const CreateBrand = () => {
               Select a Sub-category
             </option>
           </select>
-        </div>
+        </div> */}
       </div>
-      <div className="w-24 h-9 px-5 py-2 bg-pink-700 rounded-lg justify-center items-center inline-flex">
+      <div className="w-24 h-9 px-5 py-2 bg-pink-700 rounded-lg justify-center items-center  inline-flex">
         <button type="submit">
           <div className="text-white text-base font-bold font-['League Spartan'] leading-tight">
             Submit
@@ -220,20 +199,85 @@ const CreateBrand = () => {
 export default CreateBrand;
 
 const BrandCatiegories = [
-  "Food and Beverage Brands",
-  "Automotive Brands",
-  "Technology Brands",
-  "Fashion Brands",
-  "Fast Food Brands",
-  "Electronics Brands",
-  "Cosmetic Brands",
-  "Retail Brands",
-  "Beverage Brands",
-  "Luxury Brands",
-  "Financial Services Brands",
-  "Telecommunications Brands",
-  "Airlines Brands",
-  "Sportswear Brands",
-  "Entertainment Brands",
-  "Food and Beverage Brands",
+  { name: "Food and Beverage Brands" },
+  { name: "Automotive Brands" },
+  { name: "Technology Brands" },
+  { name: "Fashion Brands" },
+  { name: "Fast Food Brands" },
+  { name: "Electronics Brands" },
+  { name: "Cosmetic Brands" },
+  { name: "Retail Brands" },
+  { name: "Beverage Brands" },
+  { name: "Luxury Brands" },
+  { name: "Financial Services Brands" },
+  { name: "Telecommunications Brands" },
+  { name: "Airlines Brands" },
+  { name: "Sportswear Brands" },
+  { name: "Entertainment Brands" },
+  { name: "Food and Beverage Brands" },
 ];
+
+function SelectList({
+  list,
+}: {
+  list: {
+    name: string;
+  }[];
+}) {
+  const [selected, setSelected] = useState(list[0]);
+
+  return (
+    <div className="">
+      <Listbox value={selected} onChange={setSelected}>
+        <div className="relative mt-1">
+          <Listbox.Button className="text-gray-400 min-w-[250px] text-base font-normal font-['League Spartan'] leading-normal self-stretch px-5 py-3 bg-pink-700 bg-opacity-5 rounded-lg border border-zinc-200 justify-start items-center gap-2.5 inline-flex">
+            <span className="block truncate">{selected.name}</span>
+            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+              <ChevronUpDownIcon
+                className="h-5 w-5 text-gray-400"
+                aria-hidden="true"
+              />
+            </span>
+          </Listbox.Button>
+          <Transition
+            as={Fragment}
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+              {list.map((cat, cartIndx) => (
+                <Listbox.Option
+                  key={cartIndx}
+                  className={({ active }) =>
+                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                      active ? "bg-amber-100 text-amber-900" : "text-gray-900"
+                    }`
+                  }
+                  value={cat}
+                >
+                  {({ selected }) => (
+                    <>
+                      <span
+                        className={`block truncate ${
+                          selected ? "font-medium" : "font-normal"
+                        }`}
+                      >
+                        {cat.name}
+                      </span>
+                      {selected ? (
+                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                          <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                        </span>
+                      ) : null}
+                    </>
+                  )}
+                </Listbox.Option>
+              ))}
+            </Listbox.Options>
+          </Transition>
+        </div>
+      </Listbox>
+    </div>
+  );
+}

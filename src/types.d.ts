@@ -26,25 +26,30 @@ type AjoUser = entityType & {
   purchased?: ProductPurchases[];
 };
 
-type AjoProduct = entityType & ProductType;
+type AjoProductImage = {
+  id: number; // Unique identifier for the image
+  url: string; // URL of the image
+  alt: string; // Alternative text for the image
+ };
 
-type ColorType = { name: string; hex: string };
-
-type ProductType = {
-  id: string;
+type AjoProduct = entityType & {
   brand?: Brand;
   brandId: string;
   description?: string;
-  imageSrc: string;
+  imageSrc: AjoProductImage[];
   colors?: ColorType[];
   otherImages?: string[];
   imageAlt: string;
   href: string;
   name: string;
-  rating: AjoRatings[];
+  rating?: AjoRatings[];
   reviewCount: number;
   price: number;
 };
+
+type ColorType = { name: string; hex: string };
+
+ 
 
 type TestimonialType = {
   id: string;
@@ -79,7 +84,7 @@ type Post = entityType & {
   caption: string;
   contentText: string;
   usersId: string;
-  by: PostOwner;
+  by?: PostOwner;
   aliasesReferences: AliasReference[];
 };
 

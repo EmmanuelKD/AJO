@@ -62,7 +62,13 @@ const navigation = [
 ];
 
 const teams = [
-  { id: 1, name: "Add Brand", href: "#", initial: "+", current: false },
+  {
+    id: 1,
+    name: "Add Brand",
+    href: routes.main.addBrand,
+    initial: "+",
+    current: false,
+  },
 ];
 
 export default function MainLayout({ children }: { children: ReactNode }) {
