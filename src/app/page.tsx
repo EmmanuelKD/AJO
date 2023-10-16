@@ -3,6 +3,7 @@ import MainLayout from "./layout/main-layout";
 import Addproduct from "@/components/ajo-custom/Full components/addProduct";
 import BrandProfile from "@/components/ajo-custom/Full components/BrandProfile";
 import Post from "@/components/ajo-custom/post";
+import Marketplace from "@/components/ajo-custom/marketplace";
 
  
 export default function Home() {
@@ -25,6 +26,11 @@ export default function Home() {
       <hr  className="border-2"/>
       {/* THIS IS THE POST PAGE */}
       <Post/>
+      <hr  className="border-2"/>
+
+      {/* THIS IS THE Marketplace code below> */}
+      <Marketplace/>
+
 
       </div>      
     </MainLayout>

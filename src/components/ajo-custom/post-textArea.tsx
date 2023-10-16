@@ -2,8 +2,8 @@ import React from 'react'
 
 function PostTextArea() {
     return (
-        <div className="rounded-lg border border-zinc-900 border-opacity-50 self-stretch h-28 p-2 rounded-lg flex-col justify-start items-start flex">
-            <textarea placeholder='what do you have on your mind?' className=" border border-0 rounded-lg text-zinc-900 text-opacity-30 text-base font-normal font-['League Spartan'] leading-normal self-stretch h-20 justify-start items-start gap-2.5 inline-flex">
+        <div className="rounded-lg border border-zinc-900 border-opacity-50 self-stretch h-28 p-2 flex-col justify-start items-start flex">
+            <textarea placeholder='what do you have on your mind?' className=" border-none rounded-lg text-zinc-900 text-opacity-30 text-base font-normal font-['League Spartan'] leading-normal self-stretch h-20 justify-start items-start gap-2.5 inline-flex">
                 {/* <div className="text-zinc-900 text-opacity-30 text-base font-normal font-['League Spartan'] leading-normal"></div> */}
             </textarea>
             <div className="self-stretch px-1 justify-between items-center inline-flex">
