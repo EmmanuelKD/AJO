@@ -5,6 +5,7 @@ import MarketplaceProduct from './marketplace-product'
 
 function Marketplace() {
     return (
+        // S.O.S
         <div className="w-full py-2 flex-col justify-start items-center gap-4 inline-flex">
             <div className='w-full'><HomeTabs /></div>
             <div className="w-full px-12 flex-col justify-start items-center gap-4 flex">
