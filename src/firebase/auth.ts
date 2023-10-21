@@ -4,7 +4,7 @@
 import { routes } from "@/config";
 import { AuthContextType } from "@/context/auth/types";
 import { NotificationContextType } from "@/context/notification/types";
-// import { AppUser, AuthUserType } from "@/types";
+// import { AjoUser, AuthUserType } from "@/types";
 import { FirebaseError } from "firebase/app";
 import {
   createUserWithEmailAndPassword,
@@ -88,7 +88,7 @@ export class AuthClass {
         const user = result.user;
 
         let auth = new UsersClass();
-        let _user: AppUser = {
+        let _user: AjoUser = {
           objectId: user.uid,
           email: user.email as string,
           fname,
@@ -216,7 +216,7 @@ export class AuthClass {
   }
 
   onAuthStateChange(
-    loadUserToState?: (user?: AppUser) => void,
+    loadUserToState?: (user?: AjoUser) => void,
     navigate?: AppRouterInstance
   ) {
     onAuthStateChanged(auth, async (user) => {
@@ -233,17 +233,17 @@ export class AuthClass {
     localStorage.removeItem(LOCAL_USER_ID);
   }
 
-  saveUserToLocalStorage(user?: AppUser) {
+  saveUserToLocalStorage(user?: AjoUser) {
     if (user) {
       localStorage.setItem(LOCAL_USER_ID, JSON.stringify(user));
     }
   }
 
-  getUserFromLocalStorage(): AppUser | undefined {
+  getUserFromLocalStorage(): AjoUser | undefined {
     let userString = localStorage.getItem(LOCAL_USER_ID) as string;
     if (userString?.length > 0) {
       let userJson = JSON.parse(userString);
-      return userJson as AppUser;
+      return userJson as AjoUser;
     }
     return undefined;
   }

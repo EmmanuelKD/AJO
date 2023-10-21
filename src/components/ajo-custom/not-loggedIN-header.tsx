@@ -3,7 +3,7 @@ import AllreadNotification from "./allread-notification";
 import HeaderAvater from "./header-avater";
 // import Avater from "../icons/Avater.png"
 
-const notLoggedIn = () => {
+const NotLoggedIn = () => {
   return (
     <div>
       <div className="w-full flex-col justify-start items-center inline-flex">
@@ -43,4 +43,4 @@ const notLoggedIn = () => {
   );
 };
 
-export default notLoggedIn;
+export default NotLoggedIn;

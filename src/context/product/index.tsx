@@ -17,7 +17,7 @@ function ProductContextProvider(props: ProductContextProp) {
   });
 
   let [loadingProducts, setLoadingProducts] = useState<boolean>(true);
-  let [productsNeededReview, setProductNeededReview] = useState<AppProduct[]>(
+  let [productsNeededReview, setProductNeededReview] = useState<AjoProduct[]>(
     []
   );
 

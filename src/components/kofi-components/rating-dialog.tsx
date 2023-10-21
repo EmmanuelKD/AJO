@@ -8,7 +8,7 @@ import { NotificationContext } from "@/context/notification/context";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 
-export default function RatingDialog({ Products }: { Products: AppProduct[] }) {
+export default function RatingDialog({ Products }: { Products: AjoProduct[] }) {
   const [open, setOpen] = useState(true);
 
   const cancelButtonRef = useRef(null);
@@ -159,7 +159,7 @@ const validationSchema = Yup.object({
   review: Yup.string().required("Description is required"),
 });
 
-function ReviewSection({ productToReview }: { productToReview: AppProduct }) {
+function ReviewSection({ productToReview }: { productToReview: AjoProduct }) {
   const formik = useFormik({
     initialValues: {
       stars: 0,
